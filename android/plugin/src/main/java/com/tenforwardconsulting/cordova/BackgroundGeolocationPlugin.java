@@ -682,8 +682,10 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin {
         switch (requestCode) {
             case START_REQ_CODE:
                 startAndBindBackgroundService();
+                if (actionStartCallbackContext != null) {
                 actionStartCallbackContext.success();
                 actionStartCallbackContext = null;
+                }
                 break;
         }
     }
